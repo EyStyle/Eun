@@ -1,6 +1,6 @@
 # Eun
 ### Hi there 👋
-
+# 好好学习天天向上
 <!--
 **EyStyle/Eystyle** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -21,4 +21,8 @@ Here are some ideas to get you started:
 ~                                                                               
 ~                                                                               
 ~                                                                               
-There is nothing!
+There are something!
+
+# 3rd update!
+
+# nth attemp!!!
