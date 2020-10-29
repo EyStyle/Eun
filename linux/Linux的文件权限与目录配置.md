@@ -4,15 +4,18 @@
 
 文件权限与属性：
 
-            chgrp: 改变文件所属用户组    # chgrp [-R]  用户组名称  dirfilename/filename
+            chgrp: 改变文件所属用户组        # chgrp [-R]  用户组名称  dirfilename/filename
             chown: 改变文件所有者            # chown [-R] 账号名称 dirfilename/filename
             chown: 改变文件所有者            # chown [-R] 账号名称:组名 dirfilename/filename
             chmod: 改变文件的权限            # chmod [-R] xyz 文件或目录 (xyz: 数字属性—>4、2、1)
                     chmod [-R] u=rwx,go=rx 文件或目录
                     chmod [-R] u+w,o-x 文件或目录
              
-             uname -r        # 查看实际的内核版本
+             uname -r          # 查看实际的内核版本
              lsb_release -a    # 查看内核和distribution信息
+			 
+			 umask:	文件默认权限	==> 0022 -->(从777往下减)
+				umask -S:	u=rwx,g=rx,o=rx
 
 2、文件与目录管理
 
@@ -42,6 +45,7 @@
             -d:    后面可以接欲修改的日期而不用目前的日期，也可以使用 --date="日期或时间"
             -m:    仅修改 mtime
             -t:    后面可以接欲修改的时间而不用目前的时间，格式[YYMMDDhhmm]
+		
 
 3、文件内容查阅
 
@@ -84,4 +88,21 @@
                    f:    使用浮点数输出
                    o:    使用八进制输出
                    x:    使用十六进制输出
-           
+ 
+ 4、命令与文件的查询
+ 
+		file:	查看文件类型	# file 文件
+		which:	寻找“执行文件”	# which [-a] command
+			-a:	将所有由PATH目录中可以找到的命令均列出
+			
+		whereis:	寻找特定文件	# whereis	[-bmsu]	文件名或目录
+			-b:	只找二进制格式文件
+			-m:	只找在说明文件 manual 路径下的文件
+			-s:	只找 source 文件
+			-u:	查找不在上述三个选项当中的其他特殊文件
+			
+		locate:	在已建的数据库 /var/lib/mlocate	里查找	# locate [-ir] keyword
+			-i:	忽略大小写
+			-r:	后面可接正则表达式的显示方式
+			
+		find:	find [PATH] [option] [action]
