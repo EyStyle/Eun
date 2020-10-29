@@ -36,6 +36,13 @@
         basename /etc/sysconfig/network    ==>    network    取得文件名
         dirname /etc/sysconfig/network    ==>    /etc/sysconfig    取得目录名
 
+        touch:    修改文件时间或新建文件    # touch    [-acdmt]    文件
+            -a:    仅修改访问时间
+            -c:    仅修改文件时间
+            -d:    后面可以接欲修改的日期而不用目前的日期，也可以使用 --date="日期或时间"
+            -m:    仅修改 mtime
+            -t:    后面可以接欲修改的时间而不用目前的时间，格式[YYMMDDhhmm]
+
 3、文件内容查阅
 
        cat:    由第一行开始显示文件内容
@@ -69,4 +76,12 @@
            
        head:    只看头几行
        tail:    只看结尾几行
-       od:    以二进制的方式读取文件内容
+       od:    以二进制的方式读取文件内容    # od [-t    TYPE]    文件
+           -t:    TYPE
+                   a:    默认字符数出
+                   c:    使用ASCII码输出
+                   d:    使用十进制输出
+                   f:    使用浮点数输出
+                   o:    使用八进制输出
+                   x:    使用十六进制输出
+           
